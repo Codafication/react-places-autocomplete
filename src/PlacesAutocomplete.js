@@ -193,6 +193,9 @@ class PlacesAutocomplete extends React.Component {
   handleInputKeyDown = event => {
     /* eslint-disable indent */
     switch (event.key) {
+      case 'Tab':
+        this.handleEnterKey();
+        break;
       case 'Enter':
         event.preventDefault();
         this.handleEnterKey();
