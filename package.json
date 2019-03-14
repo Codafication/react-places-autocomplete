@@ -1,6 +1,6 @@
 {
   "name": "@teamcodafication/react-places-autocomplete",
-  "version": "7.2.1-codafication",
+  "version": "7.2.2-codafication",
   "description": "A React component for Google Maps Places Autocomplete",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "prebuild": "rimraf dist",
-    "build": "npm-run-all --parallel build:*",
+    "build": "npm-run-all --parallel build:* && copyfiles index.d.ts dist",
     "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
@@ -111,6 +111,7 @@
     ]
   },
   "dependencies": {
+    "copyfiles": "^2.1.0",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8"
   },
